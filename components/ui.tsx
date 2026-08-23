@@ -1,0 +1,7 @@
+"use client";
+import Link from "next/link";
+import { useState } from "react";
+export function Progress({ value }: { value: number }) { return <div className="h-2 overflow-hidden rounded-full bg-indigo-100"><div className="h-full rounded-full bg-gradient-to-r from-indigo-500 to-violet-400" style={{ width: `${value}%` }} /></div>; }
+export function CompleteButton({ label = "Mark complete +10" }: { label?: string }) { const [done, setDone] = useState(false); return <button onClick={() => setDone(true)} className={`rounded-xl px-4 py-2 text-sm font-bold ${done ? "bg-mint text-ink" : "bg-ink text-white"}`}>{done ? "✓ Saved to your journey" : label}</button>; }
+export function SearchBox({ placeholder = "Search Lumen" }: { placeholder?: string }) { const [value, setValue] = useState(""); return <label className="flex items-center gap-2 rounded-2xl bg-white px-4 py-3 shadow-sm"><span aria-hidden>⌕</span><input value={value} onChange={e=>setValue(e.target.value)} className="w-full bg-transparent outline-none" placeholder={placeholder} aria-label={placeholder}/>{value && <span className="text-xs text-indigo-600">Ready to search</span>}</label>; }
+export function CTA({ href, children }: { href: string, children: React.ReactNode }) { return <Link href={href} className="inline-flex rounded-2xl bg-indigo-600 px-5 py-3 font-bold text-white shadow-lg shadow-indigo-200 transition hover:-translate-y-0.5">{children}</Link>; }
