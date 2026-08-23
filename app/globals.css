@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: #17213e; background: #fffaf2; font-family: Arial, Helvetica, sans-serif; }
+button, input, textarea, select { font: inherit; }
+.shell { max-width: 1180px; margin: auto; padding: 0 20px; }
+.card { @apply rounded-3xl border border-white bg-white shadow-float; }
+.eyebrow { @apply text-xs font-bold uppercase tracking-[.18em] text-indigo-600; }
+.grid-auto { grid-template-columns: repeat(auto-fit, minmax(235px, 1fr)); }
+@keyframes float { 50% { transform: translateY(-7px); } }
+.floaty { animation: float 4s ease-in-out infinite; }
